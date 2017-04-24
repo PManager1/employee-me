@@ -23,7 +23,7 @@ Meteor.startup(() => {
   }
 
   Meteor.publish('employees', function () {
-    return Employess.find({}, { limit: 20 });
+    return Employees.find({}, { limit: 20 });
   })
 
 });

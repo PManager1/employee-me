@@ -15,7 +15,7 @@ const EmployeeList = (props) => {
             )}
 
         </div>
-        <button onClick={() => Meteor.subscribe('employees', 4) }
+        <button onClick={() => Meteor.subscribe('employees', PER_PAGE+1) }
 
             className="btn btn-primary">
             Load more ...

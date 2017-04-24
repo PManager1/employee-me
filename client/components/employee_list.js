@@ -6,6 +6,16 @@ import EmployeeDetail from './employee_detail';
 const PER_PAGE = 2;
 
 class EmployeeList extends Component {
+//  initialize the number of employee objects we want to call.
+
+componentWillMount(){
+  this.page = 1;
+}
+  handleButtonClick(){
+      Meteor.subscribe('employees', PER_PAGE * (this.page+ 1));
+      this.page += 1;
+  }
+
 
   render () {
       return (
@@ -16,7 +26,7 @@ class EmployeeList extends Component {
               )}
 
           </div>
-          <button onClick={() => Meteor.subscribe('employees', PER_PAGE+1) }
+          <button onClick={this.handleButtonClick.bind(this)}
 
               className="btn btn-primary">
               Load more ...

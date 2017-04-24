@@ -8,7 +8,7 @@ import EmployeeList from './components/employee_list';
 let App = () => {
   return (
 
-    <div>
+    <div >
       <EmployeeList />
       </div>
   );

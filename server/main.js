@@ -18,11 +18,12 @@ Meteor.startup(() => {
         Employees.insert( {
           name, email, phone,
           avatar: image.avatar()
-          // name : name,
-          // email : email,
-          // phone : phone
         });
-
     });
   }
+
+  Meteor.publish('employees', function () {
+    return Employess.find({}, { limit: 20 });
+  })
+
 });

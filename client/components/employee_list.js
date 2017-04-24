@@ -7,11 +7,14 @@ import EmployeeDetail from './employee_detail';
 
 const EmployeeList = (props) => {
   console.log('  props.employees =', props);
+
+
     return (
       <div>
         <div className="employee-list">
-
-            {props.employees.map(employee => <EmployeeDetail />)}
+            {props.employees.map(employee =>
+              <EmployeeDetail key={employee._id} employee={employee}/>
+            )}
 
         </div>
       </div>

@@ -10,6 +10,7 @@ Meteor.startup(() => {
   // see if data exists in the colleciton
   // see if the colelction hsa
   const numberRecords = Employees.find({}).count();
+
   console.log(' nubmer of Record =', numberRecords );
   if ( !numberRecords) {
     _.times(5000, () => {
@@ -22,8 +23,9 @@ Meteor.startup(() => {
     });
   }
 
-  Meteor.publish('employees', function () {
-    return Employees.find({}, { limit: 20 });
+  Meteor.publish('employees', function (PER_PAGE) {
+    console.log('26-- PER_PAGE  = ', PER_PAGE);
+    return Employees.find({}, { limit: PER_PAGE });
   })
 
 });

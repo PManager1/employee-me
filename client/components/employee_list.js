@@ -15,10 +15,7 @@ const EmployeeList = (props) => {
             )}
 
         </div>
-        <button onClick={() =>
-          // console.log(' clicked onClick')
-          Meteor.subscribe('employees', 40)
-        }
+        <button onClick={() => Meteor.subscribe('employees', 4) }
 
             className="btn btn-primary">
             Load more ...
